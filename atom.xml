@@ -4,7 +4,7 @@
   <subtitle><![CDATA[程序人生]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-10-28T03:18:32.000Z</updated>
+  <updated>2015-10-28T03:25:05.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://yoursite.com/2015/07/16/html5-notification/"/>
     <id>http://yoursite.com/2015/07/16/html5-notification/</id>
     <published>2015-07-15T21:20:00.000Z</published>
-    <updated>2015-10-28T03:18:32.000Z</updated>
+    <updated>2015-10-28T03:25:05.000Z</updated>
     <content type="html"><![CDATA[<h2 id="1_为什么要有Web_Notification">1 为什么要有Web Notification</h2><p>过去网站给用户发送提醒的方式一般是写一个div放在右下角，通过AJax不断请求后台来获取推送消息。这种方式的问题在于如果用户的活动窗口是其它页面，用户并不能发现有一条推送消息。比如你打开了GMail，但你这个时间在天猫上浏览器商品，如果这时候来了一封邮箱你是无法知道。而Web Notification正是为解决这个问题而诞生的。通过Web Notification发送的提醒可以无视当前活动窗口是哪个，只要浏览器是运行的，用户都能在一个明显的地方看到通知。</p>
 <h2 id="2_一条Notification的生命周期">2 一条Notification的生命周期</h2><ul>
 <li>1、检查浏览器是否支持Web Notifications</li>
@@ -28,15 +28,15 @@
 <li>4、显示消息</li>
 <li>5、手动，自动关闭消息</li>
 </ul>
-<h2 id="3_API">3 API</h2><h3 id="3-1_构造函数">3.1 构造函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.Notification()</span><br></pre></td></tr></table></figure>
-<h3 id="3-2_属性">3.2 属性</h3><h4 id="3-2-1_静态属性">3.2.1 静态属性</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.permission</span><br></pre></td></tr></table></figure>
+<h2 id="3_API">3 API</h2><h3 id="3-1_构造函数">3.1 构造函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.Notification()</span><br></pre></td></tr></table></figure>
+<h3 id="3-2_属性">3.2 属性</h3><h4 id="3-2-1_静态属性">3.2.1 静态属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.permission</span><br></pre></td></tr></table></figure>
 <p>属性的值有3种：<br>  default：permission的默认值，表示网站还没有请求过发送通知的权限或者发送过但被用户忽略<br>  granted：表示网站已经获取到发送通知的权限<br>  denied：表示拒绝网站向用户发送通知消息</p>
-<h4 id="3-2-2_实例属性">3.2.2 实例属性</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.title</span><br></pre></td></tr></table></figure>
-<p>通知的标题<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.dir</span><br></pre></td></tr></table></figure></p>
-<p>通知出现的方向<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.lang</span><br></pre></td></tr></table></figure></p>
-<p>通知的语言<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.body</span><br></pre></td></tr></table></figure></p>
-<p>通知的主体<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.icon</span><br></pre></td></tr></table></figure></p>
-<p>通知的图标<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.slient</span><br></pre></td></tr></table></figure></p>
+<h4 id="3-2-2_实例属性">3.2.2 实例属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.title</span><br></pre></td></tr></table></figure>
+<p>通知的标题<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.dir</span><br></pre></td></tr></table></figure></p>
+<p>通知出现的方向<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.lang</span><br></pre></td></tr></table></figure></p>
+<p>通知的语言<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.body</span><br></pre></td></tr></table></figure></p>
+<p>通知的主体<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.icon</span><br></pre></td></tr></table></figure></p>
+<p>通知的图标<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.slient</span><br></pre></td></tr></table></figure></p>
 <h2 id="4-参考文档">4.参考文档</h2><p><a href="http://www.w3.org/TR/notifications/" target="_blank" rel="external">W3 Web Notifications</a><br><a href="https://developer.mozilla.org/en-US/docs/Web/API/notification" target="_blank" rel="external">MDN Notifications</a></p>
 ]]></content>
     <summary type="html">
