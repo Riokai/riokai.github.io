@@ -5,16 +5,16 @@
   
   <title>HTML5 Web Notifications解析 | Kai&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1 为什么要有Web Notification过去网站给用户发送提醒的方式一般是写一个div放在右下角，通过AJax不断请求后台来获取推送消息。这种方式的问题在于如果用户的活动窗口是其它页面，用户并不能发现有一条推送消息。比如你打开了GMail，但你这个时间在天猫上浏览器商品，如果这时候来了一封邮箱你是无法知道。而Web Notification正是为解决这个问题而诞生的。通过Web Notifi">
+  <meta name="description" content="1、 为什么要有Web Notification过去网站给用户发送提醒的方式一般是写一个div放在右下角，通过AJax不断请求后台来获取推送消息。这种方式的问题在于如果用户的活动窗口是其它页面，用户并不能发现有一条推送消息。比如你打开了GMail，但你这个时间在天猫上浏览器商品，如果这时候来了一封邮件你是无法知道。而Web Notification正是为解决这个问题而诞生的。通过Web Notif">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HTML5 Web Notifications解析">
 <meta property="og:url" content="http://yoursite.com/2015/07/16/html5-notification/index.html">
 <meta property="og:site_name" content="Kai's Blog">
-<meta property="og:description" content="1 为什么要有Web Notification过去网站给用户发送提醒的方式一般是写一个div放在右下角，通过AJax不断请求后台来获取推送消息。这种方式的问题在于如果用户的活动窗口是其它页面，用户并不能发现有一条推送消息。比如你打开了GMail，但你这个时间在天猫上浏览器商品，如果这时候来了一封邮箱你是无法知道。而Web Notification正是为解决这个问题而诞生的。通过Web Notifi">
-<meta property="og:updated_time" content="2015-10-28T03:25:05.000Z">
+<meta property="og:description" content="1、 为什么要有Web Notification过去网站给用户发送提醒的方式一般是写一个div放在右下角，通过AJax不断请求后台来获取推送消息。这种方式的问题在于如果用户的活动窗口是其它页面，用户并不能发现有一条推送消息。比如你打开了GMail，但你这个时间在天猫上浏览器商品，如果这时候来了一封邮件你是无法知道。而Web Notification正是为解决这个问题而诞生的。通过Web Notif">
+<meta property="og:updated_time" content="2016-02-23T06:42:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML5 Web Notifications解析">
-<meta name="twitter:description" content="1 为什么要有Web Notification过去网站给用户发送提醒的方式一般是写一个div放在右下角，通过AJax不断请求后台来获取推送消息。这种方式的问题在于如果用户的活动窗口是其它页面，用户并不能发现有一条推送消息。比如你打开了GMail，但你这个时间在天猫上浏览器商品，如果这时候来了一封邮箱你是无法知道。而Web Notification正是为解决这个问题而诞生的。通过Web Notifi">
+<meta name="twitter:description" content="1、 为什么要有Web Notification过去网站给用户发送提醒的方式一般是写一个div放在右下角，通过AJax不断请求后台来获取推送消息。这种方式的问题在于如果用户的活动窗口是其它页面，用户并不能发现有一条推送消息。比如你打开了GMail，但你这个时间在天猫上浏览器商品，如果这时候来了一封邮件你是无法知道。而Web Notification正是为解决这个问题而诞生的。通过Web Notif">
   
     <link rel="alternative" href="/atom.xml" title="Kai&#39;s Blog" type="application/atom+xml">
   
@@ -90,15 +90,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1_为什么要有Web_Notification">1 为什么要有Web Notification</h2><p>过去网站给用户发送提醒的方式一般是写一个div放在右下角，通过AJax不断请求后台来获取推送消息。这种方式的问题在于如果用户的活动窗口是其它页面，用户并不能发现有一条推送消息。比如你打开了GMail，但你这个时间在天猫上浏览器商品，如果这时候来了一封邮箱你是无法知道。而Web Notification正是为解决这个问题而诞生的。通过Web Notification发送的提醒可以无视当前活动窗口是哪个，只要浏览器是运行的，用户都能在一个明显的地方看到通知。</p>
-<h2 id="2_一条Notification的生命周期">2 一条Notification的生命周期</h2><ul>
+        <h2 id="1、_为什么要有Web_Notification">1、 为什么要有Web Notification</h2><p>过去网站给用户发送提醒的方式一般是写一个div放在右下角，通过AJax不断请求后台来获取推送消息。这种方式的问题在于如果用户的活动窗口是其它页面，用户并不能发现有一条推送消息。比如你打开了GMail，但你这个时间在天猫上浏览器商品，如果这时候来了一封邮件你是无法知道。而Web Notification正是为解决这个问题而诞生的。通过Web Notification发送的提醒可以无视当前活动窗口是哪个，只要浏览器是运行的，用户都能在一个明显的地方看到通知。</p>
+<h2 id="2、_一条Notification的生命周期">2、 一条Notification的生命周期</h2><ul>
 <li>1、检查浏览器是否支持Web Notifications</li>
 <li>2、检查该网站是否已经获取通知权限，若没有，则弹出权限请求提醒</li>
 <li>3、创建消息</li>
 <li>4、显示消息</li>
 <li>5、手动，自动关闭消息</li>
 </ul>
-<h2 id="3_API">3 API</h2><h3 id="3-1_构造函数">3.1 构造函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.Notification()</span><br></pre></td></tr></table></figure>
+<h2 id="3、_API">3、 API</h2><h3 id="3-1_构造函数">3.1 构造函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.Notification()</span><br></pre></td></tr></table></figure>
 <h3 id="3-2_属性">3.2 属性</h3><h4 id="3-2-1_静态属性">3.2.1 静态属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.permission</span><br></pre></td></tr></table></figure>
 <p>属性的值有3种：<br>  default：permission的默认值，表示网站还没有请求过发送通知的权限或者发送过但被用户忽略<br>  granted：表示网站已经获取到发送通知的权限<br>  denied：表示拒绝网站向用户发送通知消息</p>
 <h4 id="3-2-2_实例属性">3.2.2 实例属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.title</span><br></pre></td></tr></table></figure>
@@ -107,12 +107,12 @@
 <p>通知的语言<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.body</span><br></pre></td></tr></table></figure></p>
 <p>通知的主体<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.icon</span><br></pre></td></tr></table></figure></p>
 <p>通知的图标<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.slient</span><br></pre></td></tr></table></figure></p>
-<h2 id="4-参考文档">4.参考文档</h2><p><a href="http://www.w3.org/TR/notifications/" target="_blank" rel="external">W3 Web Notifications</a><br><a href="https://developer.mozilla.org/en-US/docs/Web/API/notification" target="_blank" rel="external">MDN Notifications</a></p>
+<h2 id="4、参考文档">4、参考文档</h2><p><a href="http://www.w3.org/TR/notifications/" target="_blank" rel="external">W3 Web Notifications</a><br><a href="https://developer.mozilla.org/en-US/docs/Web/API/notification" target="_blank" rel="external">MDN Notifications</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/16/html5-notification/" data-id="ciga908g300008simmv5wpgvz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/16/html5-notification/" data-id="cikz1p0r5000739imv67j9fgx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
@@ -121,6 +121,20 @@
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2016/02/23/abc/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          AngularJS特性研究之双向数据绑定
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
 
@@ -141,7 +155,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/">AngularJS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -150,7 +164,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a>
+      <a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a>
     </div>
   </div>
 
@@ -159,7 +173,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">七月 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -169,6 +183,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/02/23/abc/">AngularJS特性研究之双向数据绑定</a>
+          </li>
         
           <li>
             <a href="/2015/07/16/html5-notification/">HTML5 Web Notifications解析</a>
@@ -186,7 +204,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2015 Kai<br>
+      &copy; 2016 Kai<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
