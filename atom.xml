@@ -129,6 +129,49 @@
   </entry>
   
   <entry>
+    <title><![CDATA[探索ES2015：箭头函数（Arrow Functions）]]></title>
+    <link href="http://yoursite.com/2016/01/03/es2015-arrow-function/"/>
+    <id>http://yoursite.com/2016/01/03/es2015-arrow-function/</id>
+    <published>2016-01-03T05:21:37.000Z</published>
+    <updated>2016-04-01T10:18:05.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>在JavaScript的世界中函数被誉为一等公民，每当我们需要在JS定义一个新的函数，我们都会毫不犹豫的<code>function() {}</code>，也许我们可以开始换一种方式来定义一个函数，也就是本文的主角<strong>箭头函数</strong>，一个来自ECMAScript 2015（又称ES6）的全新特性。</p>
+<h2 id="语法">语法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> func = p =&gt; p</span><br></pre></td></tr></table></figure>
+<p>上面的代码等价于</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> func = <span class="function"><span class="keyword">function</span>(<span class="params">p</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> p</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>看出差异了么？最明显的，我们不再需要写<code>function</code>这个关键字，只要使用<code>=&gt;</code>箭头即可定义一个函数。我们在定义函数的时候根据根据需求的不同，箭头函数也有一些细微的差异，我们来列举一下：</p>
+<p>如果箭头函数不需要参数或需要多个参数，就使用一个圆括号代表参数部分。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 无参函数</span></span><br><span class="line"><span class="keyword">var</span> func1 = () =&gt; <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 多参（大于1）函数</span></span><br><span class="line"><span class="keyword">var</span> func2 = (a, b) =&gt; a + b</span><br></pre></td></tr></table></figure>
+<p>如果箭头函数的代码块部分多于一条语句，就要使用大括号将它们括起来，并且使用return语句返回。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不需要显示return</span></span><br><span class="line"><span class="keyword">var</span> func = p =&gt; p</span><br><span class="line"></span><br><span class="line"><span class="comment">// 需要大括号并且显示return</span></span><br><span class="line"><span class="keyword">var</span> func p =&gt; &#123;</span><br><span class="line">  <span class="keyword">var</span> a = p + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> a</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="特性">特性</h2><p>箭头函数除了让我们少写几个字母外难道没有更牛逼的特性？必须不是！下面我们来介绍一个牛逼闪闪的特性：<strong>父作用域共享关键字this</strong>。</p>
+<p>JavaScript中的<code>this</code>做为一个古老的特性，有一个非常坑爹的特性<code>this</code>永远指向的是当前函数的上下文</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">// ?</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;, <span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<p>在运行上面代码时，<code>this</code>指向的是什么呢？答案是window，原因是<code>setTimeout</code>是<code>window</code>对象下的一个方法。但是我们此时希望的是获取到document，怎么解决呢，传统的办法是添加一个变量<code>self</code>保持对this的引用。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> self = <span class="keyword">this</span>;</span><br><span class="line"></span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(self) <span class="comment">// self =&gt; document</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;, <span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<p>但是这种方法显示不够优雅，这个时候我们就可以利用箭头函数来解决它，因为它不产生属于它自己的<code>this</code>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> self = <span class="keyword">this</span>;</span><br><span class="line"></span><br><span class="line">  setTimeout(() =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">// this =&gt; document</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;, <span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="注意">注意</h2><p>箭头函数有几个使用注意点：</p>
+<ul>
+<li>不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用解构参数代替。</li>
+<li>不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。</li>
+<li>不可以使用yield命令，因此箭头函数不能用作Generator函数。</li>
+</ul>
+<h2 id="总结">总结</h2><p>箭头函数应该是我们在ES6中使用最多的，也是我最喜欢的特性之一，箭头函数使得表达更加简洁。当第一眼看到它的写法时，就被它的优雅所吸引，建议大家多多尝尝ES6的各种新特性。</p>
+<h2 id="参考">参考</h2><blockquote>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank" rel="external">MDN</a><br><a href="http://es6.ruanyifeng.com/#docs/function#箭头函数" target="_blank" rel="external">ECMAScript 6 入门</a></p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="前言">前言</h2><p>在JavaScript的世界中函数被誉为一等公民，每当我们需要在JS定义一个新的函数，我们都会毫不犹豫的<code>function() {}</code>，也许我们可以开始换一种方式来定义一个函数，也就是本文的主角<strong>箭头]]>
+    </summary>
+    
+      <category term="ES6" scheme="http://yoursite.com/tags/ES6/"/>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[HTML5 Web Notifications解析]]></title>
     <link href="http://yoursite.com/2015/07/16/html5-notification/"/>
     <id>http://yoursite.com/2015/07/16/html5-notification/</id>
