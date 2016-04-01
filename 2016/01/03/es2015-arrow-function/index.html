@@ -59,25 +59,16 @@
 
 
 
-<meta name="description" content="前言在JavaScript的世界中函数被誉为一等公民，每当我们需要在JS定义一个新的函数，我们都会毫不犹豫的function() {}，也许我们可以开始换一种方式来定义一个函数，也就是本文的主角箭头函数，一个来自ECMAScript 2015（又称ES6）的全新特性。
-语法1var func = p =&amp;gt; p
-上面的代码等价于
-123var func = function(p) &amp;#123;">
+<meta name="description" content="前言在JavaScript的世界中函数被誉为一等公民，每当我们需要在JS定义一个新的函数，我们都会毫不犹豫的function() {}，也许我们可以开始换一种方式来定义一个函数，也就是本文的主角箭头函数，一个来自ECMAScript 2015（又称ES6）的全新特性。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="探索ES2015：箭头函数（Arrow Functions）">
 <meta property="og:url" content="http://yoursite.com/2016/01/03/es2015-arrow-function/index.html">
 <meta property="og:site_name" content="Kai's Blog">
-<meta property="og:description" content="前言在JavaScript的世界中函数被誉为一等公民，每当我们需要在JS定义一个新的函数，我们都会毫不犹豫的function() {}，也许我们可以开始换一种方式来定义一个函数，也就是本文的主角箭头函数，一个来自ECMAScript 2015（又称ES6）的全新特性。
-语法1var func = p =&amp;gt; p
-上面的代码等价于
-123var func = function(p) &amp;#123;">
-<meta property="og:updated_time" content="2016-04-01T10:18:05.000Z">
+<meta property="og:description" content="前言在JavaScript的世界中函数被誉为一等公民，每当我们需要在JS定义一个新的函数，我们都会毫不犹豫的function() {}，也许我们可以开始换一种方式来定义一个函数，也就是本文的主角箭头函数，一个来自ECMAScript 2015（又称ES6）的全新特性。">
+<meta property="og:updated_time" content="2016-04-01T10:18:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="探索ES2015：箭头函数（Arrow Functions）">
-<meta name="twitter:description" content="前言在JavaScript的世界中函数被誉为一等公民，每当我们需要在JS定义一个新的函数，我们都会毫不犹豫的function() {}，也许我们可以开始换一种方式来定义一个函数，也就是本文的主角箭头函数，一个来自ECMAScript 2015（又称ES6）的全新特性。
-语法1var func = p =&amp;gt; p
-上面的代码等价于
-123var func = function(p) &amp;#123;">
+<meta name="twitter:description" content="前言在JavaScript的世界中函数被誉为一等公民，每当我们需要在JS定义一个新的函数，我们都会毫不犹豫的function() {}，也许我们可以开始换一种方式来定义一个函数，也就是本文的主角箭头函数，一个来自ECMAScript 2015（又称ES6）的全新特性。">
 
 
 
@@ -255,6 +246,7 @@
 
       
         <h2 id="前言">前言</h2><p>在JavaScript的世界中函数被誉为一等公民，每当我们需要在JS定义一个新的函数，我们都会毫不犹豫的<code>function() {}</code>，也许我们可以开始换一种方式来定义一个函数，也就是本文的主角<strong>箭头函数</strong>，一个来自ECMAScript 2015（又称ES6）的全新特性。</p>
+<a id="more"></a> 
 <h2 id="语法">语法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> func = p =&gt; p</span><br></pre></td></tr></table></figure>
 <p>上面的代码等价于</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> func = <span class="function"><span class="keyword">function</span>(<span class="params">p</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> p</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
