@@ -1,29 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[Kai's Blog]]></title>
-  <subtitle><![CDATA[程序人生]]></subtitle>
+  <title>Kai&#39;s Blog</title>
+  <subtitle>程序人生</subtitle>
   <link href="/atom.xml" rel="self"/>
+  
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-01T01:35:47.000Z</updated>
+  <updated>2016-12-14T13:59:36.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
-    <name><![CDATA[Kai]]></name>
+    <name>Kai</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[微信浏览器踩坑集锦]]></title>
+    <title>post</title>
+    <link href="http://yoursite.com/2016/12/14/post/"/>
+    <id>http://yoursite.com/2016/12/14/post/</id>
+    <published>2016-12-14T13:59:36.000Z</published>
+    <updated>2016-12-14T13:59:36.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>微信浏览器踩坑集锦</title>
     <link href="http://yoursite.com/2016/03/29/fucking-wechat/"/>
     <id>http://yoursite.com/2016/03/29/fucking-wechat/</id>
     <published>2016-03-29T02:22:40.000Z</published>
     <updated>2016-04-01T01:35:47.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>众所周知，微信浏览器（X5内核）被前端届称为移动端的“IE6”。最近发现自己的一个WebApp在微信下面出现一个坑爹的问题，所以想写一篇文章来总结一下自己在微信开发中所遇到的一些问题和解决办法，给自己和其它人提供参考。</p>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>众所周知，微信浏览器（X5内核）被前端届称为移动端的“IE6”。最近发现自己的一个WebApp在微信下面出现一个坑爹的问题，所以想写一篇文章来总结一下自己在微信开发中所遇到的一些问题和解决办法，给自己和其它人提供参考。</p>
 <p>先说一下微信浏览器的情况，安卓端微信6.1版本以上使用的是QQ浏览器X5的内核，5.4~6.1之间如果用户手机上安装过QQ浏览器，则使用X5内核。如果未安装，则使用系统浏览器内核。</p>
 <p>iOS端的情况比较简单，由于苹果的限制，微信只能使用Safari提供的内核(也就是Webkit)。相对来说iOS的问题不多，问题主要集中在安卓端，也就是X5内核上面。<br><a id="more"></a></p>
-<h2 id="坑">坑</h2><p>坑1：软键盘遮挡输入框</p>
+<h2 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h2><p>坑1：软键盘遮挡输入框</p>
 <p>描述：这种情况发生在输入框位于底部时，点击输入框，键盘弹起，但是输入框却是纹丝不动，导致无法看到自己输出的内容。确认问题发生在微信版本号<code>v6.3.15</code>的机型上。</p>
 <p>填坑：经过分析发现在这个bug只在微信上发现，与输入法无关，同时通过代码完全无法获取到键盘已经弹起还是下去的状态。目前的办法是判断当输入框<code>focus</code>时，判断视口是否发生变化，如果发生变化，则表示浏览器会自动调整输入框位置；如果无变化，则必须我们自己通过代码来调整输入框的位置。<code>focus</code>时调整高度，<code>blur</code>时恢复初始位置。但是由于我们无法获取软键盘确切的高度，所以有时候会出现输入框底部无法完美贴合软键盘。这个办法明显不够优雅，只能等待微信官方修复这个bug。</p>
 <hr>
@@ -36,23 +52,27 @@
 <p><a href="http://x5.tencent.com/doc?id=1002" target="_blank" rel="external">微信官方X5常见问题汇总</a><br><a href="https://www.qianduan.net/qqliu-lan-qi-x5nei-he-wen-ti-hui-zong/" target="_blank" rel="external">QQ浏览器X5内核问题汇总</a></p>
 </blockquote>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h2 id="前言">前言</h2><p>众所周知，微信浏览器（X5内核）被前端届称为移动端的“IE6”。最近发现自己的一个WebApp在微信下面出现一个坑爹的问题，所以想写一篇文章来总结一下自己在微信开发中所遇到的一些问题和解决办法，给自己和其它人提供参考。</p>
-<p>先说一下微信浏览器的情况，安卓端微信6.1版本以上使用的是QQ浏览器X5的内核，5.4~6.1之间如果用户手机上安装过QQ浏览器，则使用X5内核。如果未安装，则使用系统浏览器内核。</p>
-<p>iOS端的情况比较简单，由于苹果的限制，微信只能使用Safari提供的内核(也就是Webkit)。相对来说iOS的问题不多，问题主要集中在安卓端，也就是X5内核上面。<br>]]>
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;众所周知，微信浏览器（X5内核）被前端届称为移动端的“IE6”。最近发现自己的一个WebApp在微信下面出现一个坑爹的问题，所以想写一篇文章来总结一下自己在微信开发中所遇到的一些问题和解决办法，给自己和其它人提供参考。&lt;/p&gt;
+&lt;p&gt;先说一下微信浏览器的情况，安卓端微信6.1版本以上使用的是QQ浏览器X5的内核，5.4~6.1之间如果用户手机上安装过QQ浏览器，则使用X5内核。如果未安装，则使用系统浏览器内核。&lt;/p&gt;
+&lt;p&gt;iOS端的情况比较简单，由于苹果的限制，微信只能使用Safari提供的内核(也就是Webkit)。相对来说iOS的问题不多，问题主要集中在安卓端，也就是X5内核上面。&lt;br&gt;
     
     </summary>
+    
     
       <category term="collect" scheme="http://yoursite.com/tags/collect/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[疯狂动物城：你想要的它都有]]></title>
+    <title>疯狂动物城：你想要的它都有</title>
     <link href="http://yoursite.com/2016/03/13/zootopia/"/>
     <id>http://yoursite.com/2016/03/13/zootopia/</id>
     <published>2016-03-13T11:38:43.000Z</published>
     <updated>2016-03-30T03:32:44.000Z</updated>
+    
     <content type="html"><![CDATA[<p>疯狂动物城，美好乌托邦。奇妙的想象，瑰丽的画面，悬疑、逆转、欢乐、感触……都有了。成年人看到政治讽刺和阶级偏见，青年人看到追求梦想，儿童看到可爱的动物。</p>
 <p>通篇正能量，不放弃，懂坚持，有梦想，会追求。身体弱小的兔子警察有着不一般的梦想。即使被嘲笑，遇到挫折，仍坚持着，从处处不顺的训练，到手到擒来第一名证书，终于看似实现了自己的梦，成为了警察，兔子中唯一的警察。<br><a id="more"></a></p>
 <p><img src="/images/zoo2.jpg" alt="Zoo"></p>
@@ -64,43 +84,47 @@
 <p>最喜欢的部分还是朱迪一个人去大城市的部分，经过美丽的环境，带着美好的心情，配合着雀跃的歌曲，车子或上或下，这段旅程每一瞬都显得那么美丽。</p>
 <p>电影制作精良，人物动作，表情都很精致，有着西方独特的性格。剧情方面就稍微显得薄弱，或者是通俗，没有啥太大的亮点。总体来说还是很赞的！寓意美好，很适合全家行的电影。</p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>疯狂动物城，美好乌托邦。奇妙的想象，瑰丽的画面，悬疑、逆转、欢乐、感触……都有了。成年人看到政治讽刺和阶级偏见，青年人看到追求梦想，儿童看到可爱的动物。</p>
-<p>通篇正能量，不放弃，懂坚持，有梦想，会追求。身体弱小的兔子警察有着不一般的梦想。即使被嘲笑，遇到挫折，仍坚持着，从处处不顺的训练，到手到擒来第一名证书，终于看似实现了自己的梦，成为了警察，兔子中唯一的警察。<br>]]>
+    
+      &lt;p&gt;疯狂动物城，美好乌托邦。奇妙的想象，瑰丽的画面，悬疑、逆转、欢乐、感触……都有了。成年人看到政治讽刺和阶级偏见，青年人看到追求梦想，儿童看到可爱的动物。&lt;/p&gt;
+&lt;p&gt;通篇正能量，不放弃，懂坚持，有梦想，会追求。身体弱小的兔子警察有着不一般的梦想。即使被嘲笑，遇到挫折，仍坚持着，从处处不顺的训练，到手到擒来第一名证书，终于看似实现了自己的梦，成为了警察，兔子中唯一的警察。&lt;br&gt;
     
     </summary>
+    
     
       <category term="Movie" scheme="http://yoursite.com/tags/Movie/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[AngularJS特性研究之依赖注入]]></title>
+    <title>AngularJS特性研究之依赖注入</title>
     <link href="http://yoursite.com/2016/02/23/angular-dependency-injection/"/>
     <id>http://yoursite.com/2016/02/23/angular-dependency-injection/</id>
     <published>2016-02-23T06:19:53.000Z</published>
     <updated>2016-03-15T10:44:09.000Z</updated>
+    
     <content type="html"><![CDATA[<p>说到AngularJS，大家都知道它有几个非常著名的特性，分别是：数据双向绑定、依赖注入(DI)、指令系统。这次我想来了解一下依赖注入背后的原理是怎样的。</p>
-<h2 id="什么是依赖注入">什么是依赖注入</h2><p>依赖这个名词很好理解，就是我需要一个东西，这个东西并不是我自己的，而是来自其它地方的；注入则表示，现在我需要它，别人把这个东西呈给我。</p>
+<h2 id="什么是依赖注入"><a href="#什么是依赖注入" class="headerlink" title="什么是依赖注入"></a>什么是依赖注入</h2><p>依赖这个名词很好理解，就是我需要一个东西，这个东西并不是我自己的，而是来自其它地方的；注入则表示，现在我需要它，别人把这个东西呈给我。</p>
 <a id="more"></a> 
 <p>代码举例：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// a.js</span><br><span class="line">function a() &#123;&#125;</span><br><span class="line"></span><br><span class="line">a.prototype.method = function() &#123; console.log('todo something'); &#125;</span><br><span class="line"></span><br><span class="line">// b.js</span><br><span class="line">require('a.js)</span><br><span class="line"></span><br><span class="line">a.method()</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// a.js</div><div class="line">function a() &#123;&#125;</div><div class="line"></div><div class="line">a.prototype.method = function() &#123; console.log('todo something'); &#125;</div><div class="line"></div><div class="line">// b.js</div><div class="line">require('a.js)</div><div class="line"></div><div class="line">a.method()</div></pre></td></tr></table></figure>
 <p>当b文件需要使用a文件里的方法时，只需要通过require的方式将其引入进来。正确开发的时候不能这么写，这里只是起来解释什么是依赖注入。</p>
-<h2 id="依赖注入的好处">依赖注入的好处</h2><p>依赖注入是一种设计模式，它移除了硬编码依赖，因此使得我们可以在运行中随时移除并改变依赖项目。</p>
+<h2 id="依赖注入的好处"><a href="#依赖注入的好处" class="headerlink" title="依赖注入的好处"></a>依赖注入的好处</h2><p>依赖注入是一种设计模式，它移除了硬编码依赖，因此使得我们可以在运行中随时移除并改变依赖项目。</p>
 <p>在运行过程中能够修改依赖项目的能力允许我们创建隔离环境，这对于测试来说是非常理想的。我们可以用测试环境中的一个冒牌对象来替换生产环境中的一个真实对象。</p>
 <p>从功能上来说，这种模式通过自动提前查找依赖以及为依赖提供目标，以此将依赖资源注入到需要它们的地方。</p>
-<h2 id="Angular中的依赖注入">Angular中的依赖注入</h2><p>下面让我们来看看AngularJS中如何使用依赖注入的：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> FirstController = ($scope) =&gt; &#123;</span><br><span class="line">	$scope.a = <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Angular中的依赖注入"><a href="#Angular中的依赖注入" class="headerlink" title="Angular中的依赖注入"></a>Angular中的依赖注入</h2><p>下面让我们来看看AngularJS中如何使用依赖注入的：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> FirstController = <span class="function">(<span class="params">$scope</span>) =&gt;</span> &#123;</div><div class="line">	$scope.a = <span class="number">1</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>上面的代码只要是有点Angular基础的都很容易看懂，FirstController控制器需要使用$scope，看起来貌似挺正常。</p>
 <p>再来一个示例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> FirstController = ($scope, $http) =&gt; &#123;</span><br><span class="line">	$scope.a = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">	$http.get(<span class="string">'url'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">FirstController()</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> FirstController = <span class="function">(<span class="params">$scope, $http</span>) =&gt;</span> &#123;</div><div class="line">	$scope.a = <span class="number">1</span></div><div class="line"></div><div class="line">	$http.get(<span class="string">'url'</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">FirstController()</div></pre></td></tr></table></figure>
 <p>代码比原来增加了一个$http服务，这个时候问题来了，如果此时我们调用FirstController会发生什么呢？不用想，肯定会报错。但是在AngularJS的世界里，它会知道此时需要传入$scope和$http，并且正确的将其传入。这就是Angular的依赖注入机制，我们可以试着来模拟一下，Let’s do it。</p>
-<h2 id="模拟Angular依赖注入">模拟Angular依赖注入</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> FirstController = ($scope,$http) =&gt; &#123;</span><br><span class="line">	$scope.a = <span class="number">1</span>;</span><br><span class="line">	$http.get(<span class="string">''</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 依赖注入器</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Injector</span> </span>&#123;</span><br><span class="line">	constructor() &#123;</span><br><span class="line">		<span class="keyword">this</span>.dependencies = &#123;&#125;;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	register(key, value) &#123;</span><br><span class="line">		<span class="keyword">this</span>.dependencies[key] = value;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	resolve(deps, controller) &#123;</span><br><span class="line">		<span class="keyword">let</span> arr = [];</span><br><span class="line"></span><br><span class="line">		deps.forEach(dep =&gt; &#123;</span><br><span class="line">			<span class="comment">// 判断该模块是否被注册</span></span><br><span class="line">			<span class="keyword">if</span> (<span class="keyword">this</span>.dependencies.hasOwnProperty(dep)) &#123;</span><br><span class="line">				arr.push(<span class="keyword">this</span>.dependencies[dep]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> () =&gt; &#123;</span><br><span class="line">			controller.apply(&#123;&#125;, arr);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="模拟Angular依赖注入"><a href="#模拟Angular依赖注入" class="headerlink" title="模拟Angular依赖注入"></a>模拟Angular依赖注入</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> FirstController = <span class="function">(<span class="params">$scope,$http</span>) =&gt;</span> &#123;</div><div class="line">	$scope.a = <span class="number">1</span>;</div><div class="line">	$http.get(<span class="string">''</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">// 依赖注入器</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Injector</span> </span>&#123;</div><div class="line">	<span class="keyword">constructor</span>() &#123;</div><div class="line">		<span class="keyword">this</span>.dependencies = &#123;&#125;;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	register(key, value) &#123;</div><div class="line">		<span class="keyword">this</span>.dependencies[key] = value;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	resolve(deps, controller) &#123;</div><div class="line">		<span class="keyword">let</span> arr = [];</div><div class="line"></div><div class="line">		deps.forEach(<span class="function"><span class="params">dep</span> =&gt;</span> &#123;</div><div class="line">			<span class="comment">// 判断该模块是否被注册</span></div><div class="line">			<span class="keyword">if</span> (<span class="keyword">this</span>.dependencies.hasOwnProperty(dep)) &#123;</div><div class="line">				arr.push(<span class="keyword">this</span>.dependencies[dep]);</div><div class="line">			&#125;</div><div class="line">		&#125;)</div><div class="line"></div><div class="line">		<span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">			controller.apply(&#123;&#125;, arr);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>在这里创建了里面injector，dependencies对象用来保存通过injector注册的模块，register方法实现注册模块，resolve方法用于为控制器注入所需的依赖。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> injector = <span class="keyword">new</span> Injector();</span><br><span class="line"></span><br><span class="line">injector.register(<span class="string">'$http'</span>, &#123;<span class="string">'get'</span>: value =&gt; <span class="built_in">console</span>.log(value);&#125;);</span><br><span class="line">injector.register(<span class="string">'$scope'</span>, &#123;<span class="string">'a'</span>:<span class="string">''</span>&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> injector = <span class="keyword">new</span> Injector();</div><div class="line"></div><div class="line">injector.register(<span class="string">'$http'</span>, &#123;<span class="string">'get'</span>: <span class="function"><span class="params">value</span> =&gt;</span> <span class="built_in">console</span>.log(value);&#125;);</div><div class="line">injector.register(<span class="string">'$scope'</span>, &#123;<span class="string">'a'</span>:<span class="string">''</span>&#125;);</div></pre></td></tr></table></figure>
 <p>我们先注册几个模块，Angular在其内部也实现了这个过程。</p>
 <p>现在可以开始注入了。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> FirstController = ($scope,$http) =&gt; &#123;</span><br><span class="line">	$scope.a = <span class="number">1</span>;</span><br><span class="line">	$http.get(<span class="string">'load data successful'</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">FirstController = injector.resolve([<span class="string">'$scope'</span>, <span class="string">'$http'</span>], FirstController);</span><br><span class="line"></span><br><span class="line"><span class="comment">//Run Controller</span></span><br><span class="line">FirstController();</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> FirstController = <span class="function">(<span class="params">$scope,$http</span>) =&gt;</span> &#123;</div><div class="line">	$scope.a = <span class="number">1</span>;</div><div class="line">	$http.get(<span class="string">'load data successful'</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">FirstController = injector.resolve([<span class="string">'$scope'</span>, <span class="string">'$http'</span>], FirstController);</div><div class="line"></div><div class="line"><span class="comment">//Run Controller</span></div><div class="line">FirstController();</div></pre></td></tr></table></figure>
 <p>运行正常，我们得到了意料的结果。<br><img src="/images/DI.png" alt="DI"></p>
 <p>不过，这并没有结束，现在还有两个问题需要我们解决</p>
 <ul>
@@ -109,92 +133,100 @@
 </ul>
 <p>通过翻看Angular的源代码，发现了它的解决办法：<strong>将函数代码字符串化，然后通过正则匹配出需要的依赖。</strong></p>
 <p>但是具体是怎么实现呢？我们继续改造injector！</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">resolve(controller) &#123;</span><br><span class="line">	<span class="keyword">let</span> FN_ARGS = <span class="regexp">/^\s*[^\(]*\(\s*([^\)]*)\)/m</span>;</span><br><span class="line">	<span class="keyword">let</span> STRIP_COMMENTS = <span class="regexp">/((\/\/.*$)|(\/\*[\s\S]*?\*\/))/mg</span>;</span><br><span class="line">	<span class="keyword">let</span> fnText = controller.toString().replace(STRIP_COMMENTS, <span class="string">''</span>);</span><br><span class="line">	<span class="keyword">let</span> argDecl = fnText.match(FN_ARGS);</span><br><span class="line">	<span class="keyword">let</span> deps = argDecl[<span class="number">1</span>].split(<span class="string">','</span>);</span><br><span class="line">	<span class="keyword">let</span> arr = [];</span><br><span class="line"></span><br><span class="line">	deps.forEach(dep =&gt; &#123;</span><br><span class="line">		<span class="comment">// 判断该模块是否被注册</span></span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">this</span>.dependencies.hasOwnProperty(dep)) &#123;</span><br><span class="line">			arr.push(<span class="keyword">this</span>.dependencies[dep]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> () =&gt; &#123;</span><br><span class="line">		controller.apply(&#123;&#125;, arr);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">resolve(controller) &#123;</div><div class="line">	<span class="keyword">let</span> FN_ARGS = <span class="regexp">/^\s*[^\(]*\(\s*([^\)]*)\)/m</span>;</div><div class="line">	<span class="keyword">let</span> STRIP_COMMENTS = <span class="regexp">/((\/\/.*$)|(\/\*[\s\S]*?\*\/))/mg</span>;</div><div class="line">	<span class="keyword">let</span> fnText = controller.toString().replace(STRIP_COMMENTS, <span class="string">''</span>);</div><div class="line">	<span class="keyword">let</span> argDecl = fnText.match(FN_ARGS);</div><div class="line">	<span class="keyword">let</span> deps = argDecl[<span class="number">1</span>].split(<span class="string">','</span>);</div><div class="line">	<span class="keyword">let</span> arr = [];</div><div class="line"></div><div class="line">	deps.forEach(<span class="function"><span class="params">dep</span> =&gt;</span> &#123;</div><div class="line">		<span class="comment">// 判断该模块是否被注册</span></div><div class="line">		<span class="keyword">if</span> (<span class="keyword">this</span>.dependencies.hasOwnProperty(dep)) &#123;</div><div class="line">			arr.push(<span class="keyword">this</span>.dependencies[dep]);</div><div class="line">		&#125;</div><div class="line">	&#125;)</div><div class="line"></div><div class="line">	<span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">		controller.apply(&#123;&#125;, arr);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>改造后的resolve不再需要我们传依赖数据，而是自己得出依赖并且自动注入</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FirstController = injector.resolve(FirstController);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">FirstController = injector.resolve(FirstController);</div></pre></td></tr></table></figure>
 <p>不再传入数组，仅仅传入一个控制器，可以看到结果依然是正确的。</p>
 <p><img src="/images/DI2.png" alt="DI"></p>
-<h2 id="总结">总结</h2><p>写到这里，实现了一个微型的Injector，然而Angular背后的实现原比这个要复杂的多。如果文章中有什么写的不对的地方，欢迎指正。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>写到这里，实现了一个微型的Injector，然而Angular背后的实现原比这个要复杂的多。如果文章中有什么写的不对的地方，欢迎指正。</p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>说到AngularJS，大家都知道它有几个非常著名的特性，分别是：数据双向绑定、依赖注入(DI)、指令系统。这次我想来了解一下依赖注入背后的原理是怎样的。</p>
-<h2 id="什么是依赖注入">什么是依赖注入</h2><p>依赖这个名词很好理解，就是我需要一个东西，这个东西并不是我自己的，而是来自其它地方的；注入则表示，现在我需要它，别人把这个东西呈给我。</p>]]>
+    
+      &lt;p&gt;说到AngularJS，大家都知道它有几个非常著名的特性，分别是：数据双向绑定、依赖注入(DI)、指令系统。这次我想来了解一下依赖注入背后的原理是怎样的。&lt;/p&gt;
+&lt;h2 id=&quot;什么是依赖注入&quot;&gt;&lt;a href=&quot;#什么是依赖注入&quot; class=&quot;headerlink&quot; title=&quot;什么是依赖注入&quot;&gt;&lt;/a&gt;什么是依赖注入&lt;/h2&gt;&lt;p&gt;依赖这个名词很好理解，就是我需要一个东西，这个东西并不是我自己的，而是来自其它地方的；注入则表示，现在我需要它，别人把这个东西呈给我。&lt;/p&gt;
     
     </summary>
     
-      <category term="AngularJS" scheme="http://yoursite.com/tags/AngularJS/"/>
     
       <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+      <category term="AngularJS" scheme="http://yoursite.com/tags/AngularJS/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[探索ES2015：箭头函数（Arrow Functions）]]></title>
+    <title>探索ES2015：箭头函数（Arrow Functions）</title>
     <link href="http://yoursite.com/2016/01/03/es2015-arrow-function/"/>
     <id>http://yoursite.com/2016/01/03/es2015-arrow-function/</id>
     <published>2016-01-03T05:21:37.000Z</published>
     <updated>2016-04-01T10:18:54.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>在JavaScript的世界中函数被誉为一等公民，每当我们需要在JS定义一个新的函数，我们都会毫不犹豫的<code>function() {}</code>，也许我们可以开始换一种方式来定义一个函数，也就是本文的主角<strong>箭头函数</strong>，一个来自ECMAScript 2015（又称ES6）的全新特性。</p>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在JavaScript的世界中函数被誉为一等公民，每当我们需要在JS定义一个新的函数，我们都会毫不犹豫的<code>function() {}</code>，也许我们可以开始换一种方式来定义一个函数，也就是本文的主角<strong>箭头函数</strong>，一个来自ECMAScript 2015（又称ES6）的全新特性。</p>
 <a id="more"></a> 
-<h2 id="语法">语法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> func = p =&gt; p</span><br></pre></td></tr></table></figure>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> func = <span class="function"><span class="params">p</span> =&gt;</span> p</div></pre></td></tr></table></figure>
 <p>上面的代码等价于</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> func = <span class="function"><span class="keyword">function</span>(<span class="params">p</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> p</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> func = <span class="function"><span class="keyword">function</span>(<span class="params">p</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> p</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>看出差异了么？最明显的，我们不再需要写<code>function</code>这个关键字，只要使用<code>=&gt;</code>箭头即可定义一个函数。我们在定义函数的时候根据根据需求的不同，箭头函数也有一些细微的差异，我们来列举一下：</p>
 <p>如果箭头函数不需要参数或需要多个参数，就使用一个圆括号代表参数部分。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 无参函数</span></span><br><span class="line"><span class="keyword">var</span> func1 = () =&gt; <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 多参（大于1）函数</span></span><br><span class="line"><span class="keyword">var</span> func2 = (a, b) =&gt; a + b</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 无参函数</span></div><div class="line"><span class="keyword">var</span> func1 = <span class="function"><span class="params">()</span> =&gt;</span> <span class="number">1</span></div><div class="line"></div><div class="line"><span class="comment">// 多参（大于1）函数</span></div><div class="line"><span class="keyword">var</span> func2 = <span class="function">(<span class="params">a, b</span>) =&gt;</span> a + b</div></pre></td></tr></table></figure>
 <p>如果箭头函数的代码块部分多于一条语句，就要使用大括号将它们括起来，并且使用return语句返回。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不需要显示return</span></span><br><span class="line"><span class="keyword">var</span> func = p =&gt; p</span><br><span class="line"></span><br><span class="line"><span class="comment">// 需要大括号并且显示return</span></span><br><span class="line"><span class="keyword">var</span> func p =&gt; &#123;</span><br><span class="line">  <span class="keyword">var</span> a = p + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> a</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="特性">特性</h2><p>箭头函数除了让我们少写几个字母外难道没有更牛逼的特性？必须不是！下面我们来介绍一个牛逼闪闪的特性：<strong>父作用域共享关键字this</strong>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 不需要显示return</span></div><div class="line"><span class="keyword">var</span> func = <span class="function"><span class="params">p</span> =&gt;</span> p</div><div class="line"></div><div class="line"><span class="comment">// 需要大括号并且显示return</span></div><div class="line"><span class="keyword">var</span> func p =&gt; &#123;</div><div class="line">  <span class="keyword">var</span> a = p + <span class="number">1</span></div><div class="line"></div><div class="line">  <span class="keyword">return</span> a</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><p>箭头函数除了让我们少写几个字母外难道没有更牛逼的特性？必须不是！下面我们来介绍一个牛逼闪闪的特性：<strong>父作用域共享关键字this</strong>。</p>
 <p>JavaScript中的<code>this</code>做为一个古老的特性，有一个非常坑爹的特性<code>this</code>永远指向的是当前函数的上下文</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">// ?</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;, <span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">// ?</span></div><div class="line">  &#125;)</div><div class="line">&#125;, <span class="literal">false</span>)</div></pre></td></tr></table></figure>
 <p>在运行上面代码时，<code>this</code>指向的是什么呢？答案是window，原因是<code>setTimeout</code>是<code>window</code>对象下的一个方法。但是我们此时希望的是获取到document，怎么解决呢，传统的办法是添加一个变量<code>self</code>保持对this的引用。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> self = <span class="keyword">this</span>;</span><br><span class="line"></span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(self) <span class="comment">// self =&gt; document</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;, <span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> self = <span class="keyword">this</span>;</div><div class="line"></div><div class="line">  setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(self) <span class="comment">// self =&gt; document</span></div><div class="line">  &#125;)</div><div class="line">&#125;, <span class="literal">false</span>)</div></pre></td></tr></table></figure>
 <p>但是这种方法显示不够优雅，这个时候我们就可以利用箭头函数来解决它，因为它不产生属于它自己的<code>this</code>。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> self = <span class="keyword">this</span>;</span><br><span class="line"></span><br><span class="line">  setTimeout(() =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">// this =&gt; document</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;, <span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="注意">注意</h2><p>箭头函数有几个使用注意点：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> self = <span class="keyword">this</span>;</div><div class="line"></div><div class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">// this =&gt; document</span></div><div class="line">  &#125;)</div><div class="line">&#125;, <span class="literal">false</span>)</div></pre></td></tr></table></figure>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>箭头函数有几个使用注意点：</p>
 <ul>
 <li>不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用解构参数代替。</li>
 <li>不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。</li>
 <li>不可以使用yield命令，因此箭头函数不能用作Generator函数。</li>
 </ul>
-<h2 id="总结">总结</h2><p>箭头函数应该是我们在ES6中使用最多的，也是我最喜欢的特性之一，箭头函数使得表达更加简洁。当第一眼看到它的写法时，就被它的优雅所吸引，建议大家多多尝尝ES6的各种新特性。</p>
-<h2 id="参考">参考</h2><blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>箭头函数应该是我们在ES6中使用最多的，也是我最喜欢的特性之一，箭头函数使得表达更加简洁。当第一眼看到它的写法时，就被它的优雅所吸引，建议大家多多尝尝ES6的各种新特性。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><blockquote>
 <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank" rel="external">MDN</a><br><a href="http://es6.ruanyifeng.com/#docs/function#箭头函数" target="_blank" rel="external">ECMAScript 6 入门</a></p>
 </blockquote>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h2 id="前言">前言</h2><p>在JavaScript的世界中函数被誉为一等公民，每当我们需要在JS定义一个新的函数，我们都会毫不犹豫的<code>function() {}</code>，也许我们可以开始换一种方式来定义一个函数，也就是本文的主角<strong>箭头函数</strong>，一个来自ECMAScript 2015（又称ES6）的全新特性。</p>]]>
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在JavaScript的世界中函数被誉为一等公民，每当我们需要在JS定义一个新的函数，我们都会毫不犹豫的&lt;code&gt;function() {}&lt;/code&gt;，也许我们可以开始换一种方式来定义一个函数，也就是本文的主角&lt;strong&gt;箭头函数&lt;/strong&gt;，一个来自ECMAScript 2015（又称ES6）的全新特性。&lt;/p&gt;
     
     </summary>
     
-      <category term="ES6" scheme="http://yoursite.com/tags/ES6/"/>
     
       <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+      <category term="ES6" scheme="http://yoursite.com/tags/ES6/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[详解Object.defineProperty()]]></title>
+    <title>详解Object.defineProperty()</title>
     <link href="http://yoursite.com/2015/10/06/understand-defineproperty/"/>
     <id>http://yoursite.com/2015/10/06/understand-defineproperty/</id>
     <published>2015-10-06T13:08:41.000Z</published>
     <updated>2016-04-11T03:38:31.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><code>Object.defineProperty</code>是ES5新增的一个API，其作用是给对象的属性增加更多的控制。在我们日常的coding中，这个API用到的地方不多，然而它对于MVVM框架中双向数据绑定（two-ways data binding）来说是至关重要的一个API，目前<a href="http://vuejs.org" target="_blank" rel="external">vue</a>和<a href="http://avalonjs.github.io/" target="_blank" rel="external">avalon</a>中的双向数据数据绑定均是通过它来实现的。</p>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><code>Object.defineProperty</code>是ES5新增的一个API，其作用是给对象的属性增加更多的控制。在我们日常的coding中，这个API用到的地方不多，然而它对于MVVM框架中双向数据绑定（two-ways data binding）来说是至关重要的一个API，目前<a href="http://vuejs.org" target="_blank" rel="external">vue</a>和<a href="http://avalonjs.github.io/" target="_blank" rel="external">avalon</a>中的双向数据数据绑定均是通过它来实现的。</p>
 <a id="more"></a>
-<h2 id="使用">使用</h2><p><code>Object.defineProperty</code>方法提供了一种直接的方式来定义对象属性或者修改已有对象属性。</p>
-<h3 id="语法">语法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.defineProperty(obj, prop, descriptor)</span><br></pre></td></tr></table></figure>
-<h4 id="参数">参数</h4><p><strong>obj</strong>: 需要定义属性的对象（目标对象）</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><code>Object.defineProperty</code>方法提供了一种直接的方式来定义对象属性或者修改已有对象属性。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.defineProperty(obj, prop, descriptor)</div></pre></td></tr></table></figure>
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><p><strong>obj</strong>: 需要定义属性的对象（目标对象）</p>
 <p><strong>prop</strong>: 需被定义或修改的属性名（对象上的属性或者方法）</p>
 <p><strong>descriptor</strong>: 需被定义或修改的属性的描述符</p>
-<h3 id="descriptor">descriptor</h3><p><code>obj</code>和<code>prop</code>都比较好理解，我们重点来解析第三个参数<strong>属性描述符</strong>，它是一个对象，里面有以下取值：</p>
+<h3 id="descriptor"><a href="#descriptor" class="headerlink" title="descriptor"></a>descriptor</h3><p><code>obj</code>和<code>prop</code>都比较好理解，我们重点来解析第三个参数<strong>属性描述符</strong>，它是一个对象，里面有以下取值：</p>
 <p><strong>value</strong>: 属性的值</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(a, <span class="string">'b'</span>, &#123;</span><br><span class="line">	value: <span class="number">2</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a.b); <span class="comment">// =&gt; 2</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;&#125;</div><div class="line"></div><div class="line"><span class="built_in">Object</span>.defineProperty(a, <span class="string">'b'</span>, &#123;</div><div class="line">	<span class="attr">value</span>: <span class="number">2</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(a.b); <span class="comment">// =&gt; 2</span></div></pre></td></tr></table></figure>
 <p><strong>writable</strong>: 属性是否能被重写(rewrite)，默认为<code>false</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(a, <span class="string">'b'</span>, &#123;</span><br><span class="line">	value: <span class="number">2</span>,</span><br><span class="line">	writable: <span class="literal">false</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a.b); <span class="comment">// output 2</span></span><br><span class="line"></span><br><span class="line">a.b = <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a.b); <span class="comment">// still ouput  2</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;&#125;</div><div class="line"></div><div class="line"><span class="built_in">Object</span>.defineProperty(a, <span class="string">'b'</span>, &#123;</div><div class="line">	<span class="attr">value</span>: <span class="number">2</span>,</div><div class="line">	<span class="attr">writable</span>: <span class="literal">false</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(a.b); <span class="comment">// output 2</span></div><div class="line"></div><div class="line">a.b = <span class="number">3</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(a.b); <span class="comment">// still ouput  2</span></div></pre></td></tr></table></figure>
 <p><strong>enumerable</strong>: 属性是否能在<code>for ... in</code>或者<code>Object.keys</code>中被枚举出,来默认为<code>false</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(a, <span class="string">'b'</span>, &#123;</span><br><span class="line">	value: <span class="number">2</span>,</span><br><span class="line">	enumerable: <span class="literal">false</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(a)) <span class="comment">// output []</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(a, <span class="string">'c'</span>, &#123;</span><br><span class="line">	value: <span class="number">2</span>,</span><br><span class="line">	enumerable: <span class="literal">true</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(a)) <span class="comment">// output ['c']</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;&#125;</div><div class="line"></div><div class="line"><span class="built_in">Object</span>.defineProperty(a, <span class="string">'b'</span>, &#123;</div><div class="line">	<span class="attr">value</span>: <span class="number">2</span>,</div><div class="line">	<span class="attr">enumerable</span>: <span class="literal">false</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(a)) <span class="comment">// output []</span></div><div class="line"></div><div class="line"><span class="built_in">Object</span>.defineProperty(a, <span class="string">'c'</span>, &#123;</div><div class="line">	<span class="attr">value</span>: <span class="number">2</span>,</div><div class="line">	<span class="attr">enumerable</span>: <span class="literal">true</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(a)) <span class="comment">// output ['c']</span></div></pre></td></tr></table></figure>
 <p><strong>configurable</strong>: 是否能够配置<code>value</code>，<code>writable</code>，<code>configurable</code>，默认为<code>false</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(a, <span class="string">'b'</span>, &#123;</span><br><span class="line">	value: <span class="number">2</span>,</span><br><span class="line">	enumerable: <span class="literal">false</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a.b) <span class="comment">// output 2</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(a, <span class="string">'b'</span>, &#123;</span><br><span class="line">	value: <span class="number">3</span>,</span><br><span class="line">	enumerable: <span class="literal">true</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// TypeError: Cannot redefine property: b</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;&#125;</div><div class="line"></div><div class="line"><span class="built_in">Object</span>.defineProperty(a, <span class="string">'b'</span>, &#123;</div><div class="line">	<span class="attr">value</span>: <span class="number">2</span>,</div><div class="line">	<span class="attr">enumerable</span>: <span class="literal">false</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(a.b) <span class="comment">// output 2</span></div><div class="line"></div><div class="line"><span class="built_in">Object</span>.defineProperty(a, <span class="string">'b'</span>, &#123;</div><div class="line">	<span class="attr">value</span>: <span class="number">3</span>,</div><div class="line">	<span class="attr">enumerable</span>: <span class="literal">true</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// TypeError: Cannot redefine property: b</span></div></pre></td></tr></table></figure>
 <p><strong>get</strong>: 一个给属性提供 getter 的方法，默认<code>undefined</code></p>
 <p><strong>set</strong>: 一个给属性提供 setter 的方法，默认<code>undefined</code></p>
 <p>属性描述符分为数据描述符和存取描述符。数据描述符是一个拥有可写或不可写值的属性。存取描述符是由一对 getter-setter 函数功能来描述的属性。</p>
@@ -202,59 +234,66 @@
 <p>数据描述符同时具有可选键值：<code>value</code>,<code>writable</code>,<code>get</code>,<code>set</code></p>
 <p>用思维导图来表示就是：</p>
 <p><img src="/images/descriptor.png" alt="descriptor"></p>
-<h3 id="get/set">get/set</h3><p>对于<code>set</code>和<code>get</code>，我的理解是它们是一对勾子（hook）函数，当你对一个对象的某个属性赋值时，则会自动调用相应的<code>set</code>函数；而当获取属性时，则调用<code>get</code>函数。这也是实现双向数据绑定的关键。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;&#125;</span><br><span class="line"><span class="keyword">var</span> b</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(a, <span class="string">'b'</span>, &#123;</span><br><span class="line">	get: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'get b'</span>)</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 我们可以在这里对返回的值做任何操作</span></span><br><span class="line">		<span class="keyword">return</span> b + <span class="number">1</span></span><br><span class="line">	&#125;,</span><br><span class="line">	set: <span class="function"><span class="keyword">function</span>(<span class="params">newValue</span>) </span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'set b to'</span>, newValue)</span><br><span class="line">		b = newValue</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">a.b = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a.b);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span><br><span class="line">output:</span><br><span class="line">  set b to 100</span><br><span class="line">  get b</span><br><span class="line">  101</span><br><span class="line">*/</span></span><br></pre></td></tr></table></figure>
-<h2 id="注意">注意</h2><p>数据描述符和存取描述符不能混合使用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.defineProperty(o, <span class="string">"conflict"</span>, &#123;</span><br><span class="line">  <span class="comment">// value是数据描述符</span></span><br><span class="line">  value: <span class="number">1</span>,</span><br><span class="line">  <span class="comment">// get是存取描述符</span></span><br><span class="line">  get: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// throws a TypeError: value appears only in data descriptors, get appears only in accessor descriptors</span></span><br></pre></td></tr></table></figure>
+<h3 id="get-set"><a href="#get-set" class="headerlink" title="get/set"></a>get/set</h3><p>对于<code>set</code>和<code>get</code>，我的理解是它们是一对勾子（hook）函数，当你对一个对象的某个属性赋值时，则会自动调用相应的<code>set</code>函数；而当获取属性时，则调用<code>get</code>函数。这也是实现双向数据绑定的关键。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = &#123;&#125;</div><div class="line"><span class="keyword">var</span> b</div><div class="line"></div><div class="line"><span class="built_in">Object</span>.defineProperty(a, <span class="string">'b'</span>, &#123;</div><div class="line">	<span class="attr">get</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'get b'</span>)</div><div class="line"></div><div class="line">		<span class="comment">// 我们可以在这里对返回的值做任何操作</span></div><div class="line">		<span class="keyword">return</span> b + <span class="number">1</span></div><div class="line">	&#125;,</div><div class="line">	<span class="attr">set</span>: <span class="function"><span class="keyword">function</span>(<span class="params">newValue</span>) </span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(<span class="string">'set b to'</span>, newValue)</div><div class="line">		b = newValue</div><div class="line">	&#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">a.b = <span class="number">100</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(a.b);</div><div class="line"></div><div class="line"><span class="comment">/*</span></div><div class="line">output:</div><div class="line">  set b to 100</div><div class="line">  get b</div><div class="line">  101</div><div class="line">*/</div></pre></td></tr></table></figure>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>数据描述符和存取描述符不能混合使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.defineProperty(o, <span class="string">"conflict"</span>, &#123;</div><div class="line">  <span class="comment">// value是数据描述符</span></div><div class="line">  value: <span class="number">1</span>,</div><div class="line">  <span class="comment">// get是存取描述符</span></div><div class="line">  get: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">2</span>;</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"><span class="comment">// throws a TypeError: value appears only in data descriptors, get appears only in accessor descriptors</span></div></pre></td></tr></table></figure>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h2 id="前言">前言</h2><p><code>Object.defineProperty</code>是ES5新增的一个API，其作用是给对象的属性增加更多的控制。在我们日常的coding中，这个API用到的地方不多，然而它对于MVVM框架中双向数据绑定（two-ways data binding）来说是至关重要的一个API，目前<a href="http://vuejs.org">vue</a>和<a href="http://avalonjs.github.io/">avalon</a>中的双向数据数据绑定均是通过它来实现的。</p>]]>
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;code&gt;Object.defineProperty&lt;/code&gt;是ES5新增的一个API，其作用是给对象的属性增加更多的控制。在我们日常的coding中，这个API用到的地方不多，然而它对于MVVM框架中双向数据绑定（two-ways data binding）来说是至关重要的一个API，目前&lt;a href=&quot;http://vuejs.org&quot;&gt;vue&lt;/a&gt;和&lt;a href=&quot;http://avalonjs.github.io/&quot;&gt;avalon&lt;/a&gt;中的双向数据数据绑定均是通过它来实现的。&lt;/p&gt;
     
     </summary>
     
-      <category term="ES5" scheme="http://yoursite.com/tags/ES5/"/>
     
       <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+      <category term="ES5" scheme="http://yoursite.com/tags/ES5/"/>
     
       <category term="Object" scheme="http://yoursite.com/tags/Object/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[HTML5 Web Notifications解析]]></title>
+    <title>HTML5 Web Notifications解析</title>
     <link href="http://yoursite.com/2015/07/16/html5-notification/"/>
     <id>http://yoursite.com/2015/07/16/html5-notification/</id>
     <published>2015-07-15T21:20:00.000Z</published>
     <updated>2016-03-15T10:44:40.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="1、_为什么要有Web_Notification">1、 为什么要有Web Notification</h2><p>过去网站给用户发送提醒的方式一般是写一个div放在右下角，通过AJax不断请求后台来获取推送消息。这种方式的问题在于如果用户的活动窗口是其它页面，用户并不能发现有一条推送消息。比如你打开了GMail，但你这个时间在天猫上浏览器商品，如果这时候来了一封邮件你是无法知道。而Web Notification正是为解决这个问题而诞生的。通过Web Notification发送的提醒可以无视当前活动窗口是哪个，只要浏览器是运行的，用户都能在一个明显的地方看到通知。<br><a id="more"></a> </p>
-<h2 id="2、_一条Notification的生命周期">2、 一条Notification的生命周期</h2><ul>
+    
+    <content type="html"><![CDATA[<h2 id="1、-为什么要有Web-Notification"><a href="#1、-为什么要有Web-Notification" class="headerlink" title="1、 为什么要有Web Notification"></a>1、 为什么要有Web Notification</h2><p>过去网站给用户发送提醒的方式一般是写一个div放在右下角，通过AJax不断请求后台来获取推送消息。这种方式的问题在于如果用户的活动窗口是其它页面，用户并不能发现有一条推送消息。比如你打开了GMail，但你这个时间在天猫上浏览器商品，如果这时候来了一封邮件你是无法知道。而Web Notification正是为解决这个问题而诞生的。通过Web Notification发送的提醒可以无视当前活动窗口是哪个，只要浏览器是运行的，用户都能在一个明显的地方看到通知。<br><a id="more"></a> </p>
+<h2 id="2、-一条Notification的生命周期"><a href="#2、-一条Notification的生命周期" class="headerlink" title="2、 一条Notification的生命周期"></a>2、 一条Notification的生命周期</h2><ul>
 <li>1、检查浏览器是否支持Web Notifications</li>
 <li>2、检查该网站是否已经获取通知权限，若没有，则弹出权限请求提醒</li>
 <li>3、创建消息</li>
 <li>4、显示消息</li>
 <li>5、手动，自动关闭消息</li>
 </ul>
-<h2 id="3、_API">3、 API</h2><h3 id="3-1_构造函数">3.1 构造函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.Notification()</span><br></pre></td></tr></table></figure>
-<h3 id="3-2_属性">3.2 属性</h3><h4 id="3-2-1_静态属性">3.2.1 静态属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.permission</span><br></pre></td></tr></table></figure>
+<h2 id="3、-API"><a href="#3、-API" class="headerlink" title="3、 API"></a>3、 API</h2><h3 id="3-1-构造函数"><a href="#3-1-构造函数" class="headerlink" title="3.1 构造函数"></a>3.1 构造函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Notification.Notification()</div></pre></td></tr></table></figure>
+<h3 id="3-2-属性"><a href="#3-2-属性" class="headerlink" title="3.2 属性"></a>3.2 属性</h3><h4 id="3-2-1-静态属性"><a href="#3-2-1-静态属性" class="headerlink" title="3.2.1 静态属性"></a>3.2.1 静态属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Notification.permission</div></pre></td></tr></table></figure>
 <p>属性的值有3种：<br>  default：permission的默认值，表示网站还没有请求过发送通知的权限或者发送过但被用户忽略<br>  granted：表示网站已经获取到发送通知的权限<br>  denied：表示拒绝网站向用户发送通知消息</p>
-<h4 id="3-2-2_实例属性">3.2.2 实例属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.title</span><br></pre></td></tr></table></figure>
-<p>通知的标题<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.dir</span><br></pre></td></tr></table></figure></p>
-<p>通知出现的方向<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.lang</span><br></pre></td></tr></table></figure></p>
-<p>通知的语言<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.body</span><br></pre></td></tr></table></figure></p>
-<p>通知的主体<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.icon</span><br></pre></td></tr></table></figure></p>
-<p>通知的图标<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.slient</span><br></pre></td></tr></table></figure></p>
-<h2 id="4、参考文档">4、参考文档</h2><p><a href="http://www.w3.org/TR/notifications/" target="_blank" rel="external">W3 Web Notifications</a><br><a href="https://developer.mozilla.org/en-US/docs/Web/API/notification" target="_blank" rel="external">MDN Notifications</a></p>
+<h4 id="3-2-2-实例属性"><a href="#3-2-2-实例属性" class="headerlink" title="3.2.2 实例属性"></a>3.2.2 实例属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Notification.title</div></pre></td></tr></table></figure>
+<p>通知的标题<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Notification.dir</div></pre></td></tr></table></figure></p>
+<p>通知出现的方向<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Notification.lang</div></pre></td></tr></table></figure></p>
+<p>通知的语言<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Notification.body</div></pre></td></tr></table></figure></p>
+<p>通知的主体<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Notification.icon</div></pre></td></tr></table></figure></p>
+<p>通知的图标<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Notification.slient</div></pre></td></tr></table></figure></p>
+<h2 id="4、参考文档"><a href="#4、参考文档" class="headerlink" title="4、参考文档"></a>4、参考文档</h2><p><a href="http://www.w3.org/TR/notifications/" target="_blank" rel="external">W3 Web Notifications</a><br><a href="https://developer.mozilla.org/en-US/docs/Web/API/notification" target="_blank" rel="external">MDN Notifications</a></p>
 ]]></content>
+    
     <summary type="html">
-    <![CDATA[<h2 id="1、_为什么要有Web_Notification">1、 为什么要有Web Notification</h2><p>过去网站给用户发送提醒的方式一般是写一个div放在右下角，通过AJax不断请求后台来获取推送消息。这种方式的问题在于如果用户的活动窗口是其它页面，用户并不能发现有一条推送消息。比如你打开了GMail，但你这个时间在天猫上浏览器商品，如果这时候来了一封邮件你是无法知道。而Web Notification正是为解决这个问题而诞生的。通过Web Notification发送的提醒可以无视当前活动窗口是哪个，只要浏览器是运行的，用户都能在一个明显的地方看到通知。<br>]]>
+    
+      &lt;h2 id=&quot;1、-为什么要有Web-Notification&quot;&gt;&lt;a href=&quot;#1、-为什么要有Web-Notification&quot; class=&quot;headerlink&quot; title=&quot;1、 为什么要有Web Notification&quot;&gt;&lt;/a&gt;1、 为什么要有Web Notification&lt;/h2&gt;&lt;p&gt;过去网站给用户发送提醒的方式一般是写一个div放在右下角，通过AJax不断请求后台来获取推送消息。这种方式的问题在于如果用户的活动窗口是其它页面，用户并不能发现有一条推送消息。比如你打开了GMail，但你这个时间在天猫上浏览器商品，如果这时候来了一封邮件你是无法知道。而Web Notification正是为解决这个问题而诞生的。通过Web Notification发送的提醒可以无视当前活动窗口是哪个，只要浏览器是运行的，用户都能在一个明显的地方看到通知。&lt;br&gt;
     
     </summary>
     
-      <category term="HTML5" scheme="http://yoursite.com/tags/HTML5/"/>
+      <category term="JavaScript" scheme="http://yoursite.com/categories/JavaScript/"/>
+    
     
       <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
     
-      <category term="JavaScript" scheme="http://yoursite.com/categories/JavaScript/"/>
+      <category term="HTML5" scheme="http://yoursite.com/tags/HTML5/"/>
     
   </entry>
   

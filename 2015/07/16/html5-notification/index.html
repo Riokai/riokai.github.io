@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="HTML5,JavaScript," />
+  <meta name="keywords" content="JavaScript,HTML5," />
 
 
 
@@ -264,24 +264,24 @@
       
 
       
-        <h2 id="1、_为什么要有Web_Notification">1、 为什么要有Web Notification</h2><p>过去网站给用户发送提醒的方式一般是写一个div放在右下角，通过AJax不断请求后台来获取推送消息。这种方式的问题在于如果用户的活动窗口是其它页面，用户并不能发现有一条推送消息。比如你打开了GMail，但你这个时间在天猫上浏览器商品，如果这时候来了一封邮件你是无法知道。而Web Notification正是为解决这个问题而诞生的。通过Web Notification发送的提醒可以无视当前活动窗口是哪个，只要浏览器是运行的，用户都能在一个明显的地方看到通知。<br><a id="more"></a> </p>
-<h2 id="2、_一条Notification的生命周期">2、 一条Notification的生命周期</h2><ul>
+        <h2 id="1、-为什么要有Web-Notification"><a href="#1、-为什么要有Web-Notification" class="headerlink" title="1、 为什么要有Web Notification"></a>1、 为什么要有Web Notification</h2><p>过去网站给用户发送提醒的方式一般是写一个div放在右下角，通过AJax不断请求后台来获取推送消息。这种方式的问题在于如果用户的活动窗口是其它页面，用户并不能发现有一条推送消息。比如你打开了GMail，但你这个时间在天猫上浏览器商品，如果这时候来了一封邮件你是无法知道。而Web Notification正是为解决这个问题而诞生的。通过Web Notification发送的提醒可以无视当前活动窗口是哪个，只要浏览器是运行的，用户都能在一个明显的地方看到通知。<br><a id="more"></a> </p>
+<h2 id="2、-一条Notification的生命周期"><a href="#2、-一条Notification的生命周期" class="headerlink" title="2、 一条Notification的生命周期"></a>2、 一条Notification的生命周期</h2><ul>
 <li>1、检查浏览器是否支持Web Notifications</li>
 <li>2、检查该网站是否已经获取通知权限，若没有，则弹出权限请求提醒</li>
 <li>3、创建消息</li>
 <li>4、显示消息</li>
 <li>5、手动，自动关闭消息</li>
 </ul>
-<h2 id="3、_API">3、 API</h2><h3 id="3-1_构造函数">3.1 构造函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.Notification()</span><br></pre></td></tr></table></figure>
-<h3 id="3-2_属性">3.2 属性</h3><h4 id="3-2-1_静态属性">3.2.1 静态属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.permission</span><br></pre></td></tr></table></figure>
+<h2 id="3、-API"><a href="#3、-API" class="headerlink" title="3、 API"></a>3、 API</h2><h3 id="3-1-构造函数"><a href="#3-1-构造函数" class="headerlink" title="3.1 构造函数"></a>3.1 构造函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Notification.Notification()</div></pre></td></tr></table></figure>
+<h3 id="3-2-属性"><a href="#3-2-属性" class="headerlink" title="3.2 属性"></a>3.2 属性</h3><h4 id="3-2-1-静态属性"><a href="#3-2-1-静态属性" class="headerlink" title="3.2.1 静态属性"></a>3.2.1 静态属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Notification.permission</div></pre></td></tr></table></figure>
 <p>属性的值有3种：<br>  default：permission的默认值，表示网站还没有请求过发送通知的权限或者发送过但被用户忽略<br>  granted：表示网站已经获取到发送通知的权限<br>  denied：表示拒绝网站向用户发送通知消息</p>
-<h4 id="3-2-2_实例属性">3.2.2 实例属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.title</span><br></pre></td></tr></table></figure>
-<p>通知的标题<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.dir</span><br></pre></td></tr></table></figure></p>
-<p>通知出现的方向<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.lang</span><br></pre></td></tr></table></figure></p>
-<p>通知的语言<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.body</span><br></pre></td></tr></table></figure></p>
-<p>通知的主体<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.icon</span><br></pre></td></tr></table></figure></p>
-<p>通知的图标<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Notification.slient</span><br></pre></td></tr></table></figure></p>
-<h2 id="4、参考文档">4、参考文档</h2><p><a href="http://www.w3.org/TR/notifications/" target="_blank" rel="external">W3 Web Notifications</a><br><a href="https://developer.mozilla.org/en-US/docs/Web/API/notification" target="_blank" rel="external">MDN Notifications</a></p>
+<h4 id="3-2-2-实例属性"><a href="#3-2-2-实例属性" class="headerlink" title="3.2.2 实例属性"></a>3.2.2 实例属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Notification.title</div></pre></td></tr></table></figure>
+<p>通知的标题<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Notification.dir</div></pre></td></tr></table></figure></p>
+<p>通知出现的方向<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Notification.lang</div></pre></td></tr></table></figure></p>
+<p>通知的语言<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Notification.body</div></pre></td></tr></table></figure></p>
+<p>通知的主体<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Notification.icon</div></pre></td></tr></table></figure></p>
+<p>通知的图标<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Notification.slient</div></pre></td></tr></table></figure></p>
+<h2 id="4、参考文档"><a href="#4、参考文档" class="headerlink" title="4、参考文档"></a>4、参考文档</h2><p><a href="http://www.w3.org/TR/notifications/" target="_blank" rel="external">W3 Web Notifications</a><br><a href="https://developer.mozilla.org/en-US/docs/Web/API/notification" target="_blank" rel="external">MDN Notifications</a></p>
 
       
     </div>
@@ -296,9 +296,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/HTML5/" rel="tag">#HTML5</a>
-          
             <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+            <a href="/tags/HTML5/" rel="tag">#HTML5</a>
           
         </div>
       
@@ -381,7 +381,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -449,7 +449,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、_为什么要有Web_Notification"><span class="nav-number">1.</span> <span class="nav-text">1、 为什么要有Web Notification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、_一条Notification的生命周期"><span class="nav-number">2.</span> <span class="nav-text">2、 一条Notification的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、_API"><span class="nav-number">3.</span> <span class="nav-text">3、 API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1_构造函数"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2_属性"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-1_静态属性"><span class="nav-number">3.2.1.</span> <span class="nav-text">3.2.1 静态属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-2_实例属性"><span class="nav-number">3.2.2.</span> <span class="nav-text">3.2.2 实例属性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、参考文档"><span class="nav-number">4.</span> <span class="nav-text">4、参考文档</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、-为什么要有Web-Notification"><span class="nav-number">1.</span> <span class="nav-text">1、 为什么要有Web Notification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、-一条Notification的生命周期"><span class="nav-number">2.</span> <span class="nav-text">2、 一条Notification的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、-API"><span class="nav-number">3.</span> <span class="nav-text">3、 API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-构造函数"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-属性"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-1-静态属性"><span class="nav-number">3.2.1.</span> <span class="nav-text">3.2.1 静态属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-2-实例属性"><span class="nav-number">3.2.2.</span> <span class="nav-text">3.2.2 实例属性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、参考文档"><span class="nav-number">4.</span> <span class="nav-text">4、参考文档</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -471,7 +471,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
